@@ -19,11 +19,11 @@ export type PushwooshPluginProps = {
 };
 
 const withPushwoosh: ConfigPlugin<PushwooshPluginProps> = (config, props) => {
-  if (props.android) {
+  if (props && props.android) {
     config = withPushwooshAndroid(config, props.android);
   }
   
-  if (props.ios) {
+  if (props && props.ios) {
     config = withPushwooshIOS(config, props.ios);
   }
   return config;
